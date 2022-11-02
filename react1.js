@@ -17,51 +17,7 @@
 // }, {});
 // console.log(fruit2);
 //3
-class Car {
-  constructor(brand, model, speed = 0, motion = "The car isn't moving") {
-    this.brand = brand;
-    this.model = model;
-    this.speed = speed;
-    this.motion = motion;
-  }
 
-  status = () => {
-    this.check_Motion();
-    return `car ${this.brand} ${this.model} is moving ${this.speed} km/h and car status is: ${this.motion}`;
-  };
-
-  check_Motion = () => {
-    if (this.speed > 0) {
-      this.motion = "The car is moving";
-    } else {
-      this.motion = "The car isn't moving";
-    }
-  };
-
-  accelerate = (speedmeter = 0) => {
-    if (speedmeter > 0) {
-      return this.status((this.speed += speedmeter));
-    } else {
-      return this.status();
-    }
-  };
-  brake = (speedoff = 0) => {
-    if (speedoff > this.speed) {
-      return "Invalid Argument";
-    } else {
-      return this.status((this.speed -= speedoff));
-    }
-  };
-  emergency_Brake = () => {
-    return this.status((this.speed = 0));
-  };
-}
-
-let result = new Car("AlfaRomeo", "Stelvio", 150);
-
-console.log(result.accelerate(80));
-console.log(result.brake(60));
-console.log(result.emergency_Brake());
 //4
 // function addAsync(x, y) {
 //   return new Promise((resolve, reject) => {
